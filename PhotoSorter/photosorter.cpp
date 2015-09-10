@@ -22,7 +22,27 @@ void PhotoSorter::about ()
 						  "libraries.<br>Works with any computer that can run Qt5.5."));
 	}
 
-void PhotoSorter::open ()
+void PhotoSorter::closeEvent ( QCloseEvent *event )
+	{
+		
+	}
+
+QUrl PhotoSorter::open ()//I think this shouldn't return, but send the QUrl object value/string to where I am displaying them
+	{
+	return QFileDialog::getExistingDirectoryUrl ();
+	}
+
+void PhotoSorter::ManualSortWizard ()
+	{
+
+	}
+
+void PhotoSorter::FastSortWizard ()
+	{
+
+	}
+
+void PhotoSorter::SeriesRenameWizard ()
 	{
 
 	}

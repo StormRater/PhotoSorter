@@ -2,6 +2,7 @@
 #define PHOTOSORTER_H
 
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/qfiledialog.h>
 #include "ui_photosorter.h"
 
 class PhotoSorter : public QMainWindow
@@ -15,14 +16,19 @@ public:
 
 	
 	//protected:
-	//void closeEvent ( QCloseEvent *event ) Q_DECL_OVERRIDE;
+	void closeEvent ( QCloseEvent *event ) Q_DECL_OVERRIDE;
 
-	private slots:
-	void open ();
+private slots:
+	QUrl open ();
 	void about ();
+	void ManualSortWizard ();
+	void FastSortWizard ();
+	void SeriesRenameWizard ();
+
 
 private:
 	Ui::MainWindow ui;
+	
 	
 	void createStatusBar ();
 };

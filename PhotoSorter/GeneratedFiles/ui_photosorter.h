@@ -51,7 +51,7 @@ public:
 	QMenu *menuHelp;
     QMenu *menuWindow;
 
-    QToolBar *toolBar;
+    //QToolBar *toolBar;
     QStatusBar *statusBar;
 	
 
@@ -115,9 +115,9 @@ public:
         menuWindow = new QMenu(menubar);
         menuWindow->setObjectName(QStringLiteral("menuWindow"));
         MainWindow->setMenuBar(menubar);
-        toolBar = new QToolBar(MainWindow);
-        toolBar->setObjectName(QStringLiteral("toolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+        //toolBar = new QToolBar(MainWindow);
+        //toolBar->setObjectName(QStringLiteral("toolBar"));
+        //MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
@@ -179,7 +179,7 @@ public:
 
         menuWindow->setTitle(QApplication::translate("MainWindow", "Window", 0));
 
-        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0));
+        //toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0));
 
     } // retranslateUi
 
@@ -198,6 +198,7 @@ public:
 	//menuManual->setStatusTip ( "Destination Directories" );
 	actionBrowse_DestinationDirectory->setStatusTip ( "Set the desired destination directories for files" );
 		actionBrowse_DestinationDirectory->setShortcut ( QKeySequence(Qt::CTRL + Qt::Key_O + Qt::Key_D ) );
+		//TODO: Shortcuts are not being displayed properly
 		actionRecent_Destination->setStatusTip ( "Recently opened destination directories" );
 	actionBrowse_SourceDirectory->setStatusTip ( "Set the desired source directories for files" );
 	actionBrowse_SourceDirectory->setShortcut ( QKeySequence ( Qt::CTRL + Qt::Key_O + Qt::Key_S ) );
@@ -207,6 +208,11 @@ public:
 	actionClose->setStatusTip ( "Another way to exit the program!" );
 	//actionClose->setShortcut ( QKeySequence ("Alt+F4","Close"));
 	
+	actionFast_Sort->setStatusTip ( "Moves selected files to selected directories" );
+	actionManual_Sort->setStatusTip ( "Manually move and name files with help" );
+	actionSeries_Rename->setStatusTip ( "Select a name and all selected files with be named as such with #'s" );
+
+
 	}
 
 };
